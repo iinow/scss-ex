@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../scss/Section.scss'
 
 const Section: React.FC = () => {
   return (
