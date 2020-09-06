@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Header as ConfigHeader } from '../config'
 import '../scss/Header.scss'
 
 const Header: React.FC = () => {
-  const [menus, setMenus] = useState(new Array<string>())
-
-  useEffect(() => {
-    setMenus(['Developers', 'Register', 'Developers'])
-  }, [])
-
   return (
     <nav className="navbar bg-dark">
       <h1>
@@ -17,11 +12,9 @@ const Header: React.FC = () => {
         </Link>
       </h1>
       <ul>
-        {menus.map((menu, index) => (
+        {ConfigHeader.HeaderMenus.map((menu, index) => (
           <li key={index}>
-            <Link to={'/'}>
-              {menu}
-            </Link>
+            <Link to={menu.path}>{menu.name}</Link>
           </li>
         ))}
       </ul>

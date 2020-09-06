@@ -1,23 +1,31 @@
 import React from 'react'
 import { Header, Section } from './components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Main } from './pages'
+import { Main, Login, Register, Profiles } from './pages'
 import './scss/App.scss'
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Router>
-        <Header/>
-        <Section/>
+        <Header />
         <Switch>
-          <Route path="/">
-            <Main/>
+          <Route path="/" exact>
+            <Main />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="/profile">
+            <Profiles />
           </Route>
         </Switch>
       </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
